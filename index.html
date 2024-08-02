@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="homePage">
+        <p class="welcome">Добро пожаловать!</p>
+
+        <button class="registration">Регистрация</button>
+        <button class="authorization">Авторизация</button>
+      </div>
+      <div class="form none">
+        <p class="creareAcc">Создание аккаунта</p>
+        <div class="wrongData">
+          <p class="wrongDataText none">Введите все данные</p>
+        </div>
+        <form class="registrForm" name="registrForm">
+          <input
+            type="text"
+            class="nameRegist"
+            name="nameRegist"
+            placeholder="Ваше логин"
+          />
+          <input
+            type="text"
+            class="emailRegist"
+            name="emailRegist"
+            placeholder="Ваша почта"
+          />
+          <button class="registr">Регистрация</button>
+        </form>
+      </div>
+      <div class="checkRegistr none">
+        <p class="autorizData">Введите данные</p>
+        <div class="wrongData">
+          <p class="wrongDataTextAut none">Введите все данные</p>
+        </div>
+        <form class="autorizForm" name="autorizForm">
+          <input
+            type="text"
+            class="nameAutor"
+            name="nameAutor"
+            placeholder="Ваше логин"
+          />
+          <input
+            type="text"
+            class="emailAutor"
+            name="emailAutor"
+            placeholder="Ваша почта"
+          />
+          <button class="autorizeButton">Войти</button>
+        </form>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
