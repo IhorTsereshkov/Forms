@@ -100,12 +100,3 @@ function globalLogic() {
 }
 
 globalLogic();
-
-// const obj = {
-//   name: "Ihor",
-//   age: 26,
-//   city: "Minsk",
-// };
-
-// localStorage.setItem("user", JSON.stringify(obj));
-// console.log(JSON.parse(localStorage.getItem("user")));
