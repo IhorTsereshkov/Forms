@@ -10,6 +10,8 @@ const checkRegistr = document.querySelector(".checkRegistr");
 const buttonRegistrPage = document.querySelector(".registr");
 const buttonAutorizPage = document.querySelector(".autorizeButton");
 const wrongDataTextAut = document.querySelector(".wrongDataTextAut");
+const buttonAutorizRegistr = document.querySelector(".regAutorize");
+const buttonRegistrAutorize = document.querySelector(".registrAutorize");
 
 homePage.addEventListener("click", (e) => {
   const clickElement = e.target;
@@ -33,42 +35,77 @@ function globalLogic() {
       wrongDataText.classList.remove("none");
       return;
     }
+
+    // const existingUser = arr.find((item) => {
+    //   item.nameRegist === nameRegist.value;
+    // });
+    // if (existingUser) {
+    //   alert("Такой пользователь уже существует!");
+    //   return;
+    // }
+
+    if (nameRegist.value.includes("@") == false) {
+      alert("Введите e-mail корректно!");
+      return;
+    }
+
     const objInf = {
       nameRegist: nameRegist.value,
       emailRegist: emailRegist.value,
     };
-    let nameUser = nameRegist.value;
     arr.push(objInf);
     console.log(arr);
     nameRegist.value = "";
     emailRegist.value = "";
     wrongDataText.classList.add("none");
-    alert(`Добро пожаловать ${nameUser}!`);
+    alert(`Новый аккаунт создан!`);
+    formPage.classList.add("none");
+    checkRegistr.classList.remove("none");
+  });
+
+  buttonAutorizRegistr.addEventListener("click", (e) => {
+    e.preventDefault();
     formPage.classList.add("none");
     checkRegistr.classList.remove("none");
   });
 
   buttonAutorizPage.addEventListener("click", (e) => {
     e.preventDefault();
-    let nameUser = nameAutor.value;
 
     if (nameAutor.value === "" || emailAutor.value === "") {
       wrongDataTextAut.classList.remove("none");
       return;
     }
-    arr.forEach((item) => {
-      if (
+    const users = arr.find((item) => {
+      return (
         item.nameRegist === nameAutor.value &&
         item.emailRegist === emailAutor.value
-      ) {
-        alert(`Вы вошли в свою учётную запись, ${nameUser}`);
-      } else {
-        alert(`Такой учётной записи нет`);
-      }
+      );
     });
+    if (users) {
+      alert(`Вы вошли в свою учётную запись!`);
+    } else {
+      alert(`Такой учётной записи нет`);
+      return;
+    }
     checkRegistr.classList.add("none");
     homePage.classList.remove("none");
+  });
+
+  buttonRegistrAutorize.addEventListener("click", (e) => {
+    e.preventDefault();
+    checkRegistr.classList.add("none");
+    formPage.classList.remove("none");
   });
 }
 
 globalLogic();
+
+// const obj = {
+//   name: "Ihor",
+//   age: 26,
+//   city: "Minsk",
+// };
+
+// localStorage.setItem("user", JSON.stringify(obj));
+// console.log(JSON.parse(localStorage.getItem("user")));

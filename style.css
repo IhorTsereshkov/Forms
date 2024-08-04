@@ -9,7 +9,7 @@
   margin-top: 7vh;
   max-width: 450px;
   width: 100%;
-  height: 250px;
+  height: 275px;
   background-color: bisque;
   border-radius: 10px;
   display: flex;
@@ -144,4 +144,28 @@ input:focus::placeholder {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 19px;
   font-weight: 500;
+}
+
+.regAutorize {
+  width: 350px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.registrAutorize {
+  width: 350px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
